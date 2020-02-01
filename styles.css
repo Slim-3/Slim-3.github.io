@@ -1,0 +1,82 @@
+/* ----Styles---- */
+
+/* -Background- */ 
+body {
+    
+    background-color: #484848;
+}
+
+/* ---Main--- */ 
+.clickerObjectContainer {
+    width:600px;
+	height:500px;
+    display: block;
+    margin-left: -8;
+    margin-top: -7;
+    
+    
+    background-color: #333333; 
+}
+.clickerObject {
+    width:560px;
+    transition: transform .1s;
+    position: sticky;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+
+.clickerObject:hover {
+  transform: scale(1.04); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: rotateY(1.04);
+}
+.clickerObject:active {
+  transform: scale(1.02); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.display {
+    text-align:center
+    background-color: #ffffff;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #363636;
+    border-style: none;
+    color: aliceblue;
+    font-size: 40;
+    width: 600;
+    height:80;
+   
+}
+
+.upgradeButton {
+    
+    background-color: #ffffff;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #393939;
+    border-style: none;
+    color: aliceblue;
+    width: 600;
+    height:80px;
+    
+}
+
+.upgradeButtonText {
+    background-color: none;
+    text-align:left;
+    text-indent: 25;
+    font-size: 20;
+    font-style: italic;
+    transition: transform .1s;
+    
+}
+
+.upgradeButtonText:hover {
+    transform: scale(1.04);
+    
+}
+

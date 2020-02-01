@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<!--INIT-->
+<script>
+    var clickercount = 0;
+    var level = 0;
+    var autoClicker = 0;
+</script>
+
+<!--HTML-->
+<html>
+<head>
+    <title>Slim's ClickerTest</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<!--Body-->
+<body>
+    <!--Clicker Object-->
+    <div class="clickerObjectContainer">
+    <a href=# onclick="add()"><img class="clickerObject" src="https://safebooru.org//images/1760/873593c1fe080dfcb46531e2a3744e7c87166a60.png?1842363"></a>
+        <br>
+    <input class="display" type="text" id="text" disabled style= text-align:center>
+        
+        
+        <button class="upgradeButton" onclick="upgrade(), clearAuto()" > 
+            <p class="upgradeButtonText" id="basicUpgrade"> 10pts: Tapping Power +1 </p>
+            
+        </button>
+        <button class="upgradeButton" onclick="upgrade2()" > 
+            <p class="upgradeButtonText" id="autoUpgrade"> 10pts: Auto Clicker +1 </p>
+            
+        </button>
+        
+    </div>
+    
+    <br>
+
+    
+    
+    
+    
+    
+    <script>
+        
+    function add() {
+        clickercount = clickercount + 1 + level;
+        document.getElementById('text').value = clickercount;
+        
+    }
+        
+    var cost1 = 10;
+    
+    // ----------- TAPPER -----------    
+    function upgrade() {
+        
+        if(clickercount>=cost1) {
+            clickercount = clickercount - cost1;
+            level = level + 1;
+        
+            cost1 = cost1+15;
+            
+            
+            document.getElementById('basicUpgrade').innerHTML = cost1 + "pts: Tapping Power +1 Lvl" + level;
+            document.getElementById('text').value = clickercount;
+            
+            
+            
+        }
+      
+    }
+        
+    // ----------- AUTO -----------
+    
+    var level2 = 0;
+    var cost2 = 10;
+        
+    function upgrade2(){
+        
+        if(clickercount>=cost2) {
+            
+            
+            
+            clickercount = clickercount - cost2;
+            level2 = level2 + 1;
+        
+            cost2 = cost2+15;
+            
+            
+            document.getElementById('autoUpgrade').innerHTML = cost2 + "pts: Auto Clicker +1 Lvl" + level2;
+            document.getElementById('text').value = clickercount;
+            
+            timer = 1000/(level2);
+            
+            clearAuto();
+            autoClicker = setInterval(autom, timer);
+            
+        }
+      
+    }
+    
+    function autom() {
+        clickercount = clickercount + 1;
+        document.getElementById('text').value = clickercount;
+        
+    }
+        
+    function clearAuto() {
+        clearInterval(autoClicker);
+    }
+    </script>
+
+</body>
+</html>
